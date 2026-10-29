@@ -125,6 +125,7 @@
   .zoombtns{position:absolute;right:10px;top:10px;display:flex;gap:6px;z-index:3}
   .zoombtns button{font:500 12.5px "Noto Sans KR",sans-serif;padding:6px 11px;border-radius:999px;border:1px solid rgba(0,0,0,.08);background:rgba(255,250,243,.95);color:#2b2420;box-shadow:0 1px 4px rgba(0,0,0,.15);cursor:pointer}
   #map canvas{outline:none}
+  .ppin{width:24px;height:24px;border-radius:6px;background:#2f6db5;color:#fff;font:700 13px/24px "Noto Sans KR",sans-serif;text-align:center;border:2px solid #fff;box-shadow:0 2px 5px rgba(0,0,0,.3)}
   .mapnote{font-size:12.5px;color:var(--sub);padding:0 16px 12px}
   @media (prefers-color-scheme: dark){ :root:not([data-theme="light"]) #map canvas{filter:brightness(.78) contrast(1.05)} }
   :root[data-theme="dark"] #map canvas{filter:brightness(.78) contrast(1.05)}
@@ -165,38 +166,74 @@
   <div class="mapnote">선은 순서를 보여주는 직선이에요. 실제 도로 경로는 각 장소의 '길찾기'(카카오맵)로 확인하세요. 하루 총 운전 약 3시간 30분 · 180km 안팎.</div>
 </div>
 
-<h2>🗓 하루 일정 <span class="n">아점 → 한옥카페 → 숲 → 호수 → 불빛 → 갈비</span></h2>
+<h2>🗓 하루 일정 <span class="n">브런치 → 숲길 → 한옥 디저트 → 호수 → 불빛 → 갈비</span></h2>
 
 <div class="tl">
 
-  <div class="stop drive"><div class="drive-line"><b>10:00</b> 성남 수정구 출발 → 서울외곽순환 → 퇴계원IC → 광릉내 · 약 50분</div></div>
+  <div class="stop drive"><div class="drive-line"><b>10:00</b> 성남 수정구 출발 → 서울외곽순환 → 의정부IC → 소흘읍 · 약 55분</div></div>
 
   <div class="stop">
     <div class="card">
-      <figure class="photo"><img src="images/bulgogi.jpg" alt="숯불 돼지불고기 (메뉴 예시)" loading="lazy" style="object-position:center 60%">
-        <span class="badge">메뉴 예시 · 돼지불고기</span>
-        <a class="more" href="https://map.naver.com/p/search/광릉한옥집" target="_blank" rel="noopener">📷 가게 사진</a>
-        <a class="credit" href="https://commons.wikimedia.org/wiki/File:Dwaeji-bulgogi_1.jpg" target="_blank" rel="noopener">© chomjong · CC BY 2.0</a></figure>
-      <div class="time">11:00 – 12:10 · 🍚 아점</div>
-      <h3>🍖 광릉한옥집 — 숯불고기 메밀쌈 & 평양냉면</h3>
-      <span class="tag hot">아점 · 오픈런</span><span class="tag">한옥</span><span class="tag">웨이팅 있음</span>
-      <p>'광릉식 불고기'로 유명한 집. 숯불에 구운 돼지·소 불고기를 얇은 메밀전병에 장아찌·나물과 싸 먹는 게 시그니처예요. 메밀 70% 평양냉면도 함께. 11시 오픈에 맞춰 도착하니 주말 웨이팅을 거의 피할 수 있어요.</p>
-      <ul><li>추천: 돼지숯불고기 메밀쌈 + 평양냉면 1 (양이 넉넉한 편)</li></ul>
+      <figure class="photo"><img src="images/brunch.jpg" alt="아보카도 오픈 샌드위치 (메뉴 예시)" loading="lazy">
+        <span class="badge">메뉴 예시 · 아보카도 오픈샌드위치</span>
+        <a class="more" href="https://map.naver.com/p/search/카페아리 포천" target="_blank" rel="noopener">📷 정원 사진</a>
+        <a class="credit" href="https://commons.wikimedia.org/wiki/File:Avocado_%26_Smoked_Salmon_On_Sourdough_Toast_-_Amo_2026-02-04.jpg" target="_blank" rel="noopener">© Andy Li · CC0</a></figure>
+      <div class="time">11:00 – 12:10 · 🥑 브런치</div>
+      <h3>🌿 카페아리 — 나무와 꽃 가득한 정원 브런치</h3>
+      <span class="tag hot">구글 평점 4.5</span><span class="tag">정원 카페</span><span class="tag">연중무휴</span>
+      <p>나무와 꽃이 가득한 정원 속 브런치 카페. 테라스·정원·소파존·텐트존까지 자리가 다양하고 실내에도 식물이 많아 사진이 예쁘게 나와요. 브런치 메뉴만 16가지.</p>
+      <ul>
+        <li>시그니처: <b>아보카도 새우 오픈샌드위치</b> + 버섯 트러플 크림파스타 (또는 새우 피칸 로제파스타)</li>
+        <li>오후 5시 전 브런치 주문 시 아메리카노 무료</li>
+      </ul>
       <div class="meta">
-        <div><b>주소</b> 남양주시 진접읍 광릉내로 36</div>
-        <div><b>영업</b> 주말 11:00~20:50 (L.O 20:00) · 화요일 휴무</div>
-        <div><b>팁</b> 10:50쯤 도착해 바로 대기 등록 → 대기 중 미리 주문하면 앉자마자 나와요</div>
+        <div><b>주소</b> 포천시 소흘읍 죽엽산로 69-23</div>
+        <div><b>영업</b> 11:00~18:00 (L.O 17:30) · 연중무휴 · ☎ 031-302-6334</div>
+        <div><b>팁</b> 음식이 나오기까지 조금 걸린다는 후기가 있어요 → 오픈 시간에 맞춰 도착</div>
       </div>
       <div class="maps">
-        <a href="https://map.naver.com/p/search/광릉한옥집" target="_blank" rel="noopener">네이버지도</a>
-        <a href="https://map.kakao.com/link/search/광릉한옥집" target="_blank" rel="noopener">카카오맵</a>
+        <a href="https://map.naver.com/p/search/카페아리 포천" target="_blank" rel="noopener">네이버지도</a>
+        <a href="https://map.kakao.com/link/search/카페아리 포천" target="_blank" rel="noopener">카카오맵</a>
       </div>
-      <div class="alt"><b>대안</b> 광릉불고기 (진접읍 광릉내로82번길 40-1) — 숯불 돼지불고기 + 반찬 맛집, 일요일 11:00~20:50, 월 휴무 (차로 3분)</div>
+      <div class="alt"><b>대안</b> <b>프롬이태리</b> (죽엽산로 669, 구글 4.7) — 앤티크 분위기 이탈리안, 수목원에서 차로 3분. 일요일 11:00~20:40</div>
+    </div>
+  </div>
+
+  <div class="stop drive"><div class="drive-line"><b>12:10</b> 차로 약 15~20분 · 봉선사 주차장으로</div></div>
+
+  <div class="stop">
+    <div class="card">
+      <figure class="photo"><img src="images/arboretum.jpg" alt="국립수목원 전나무숲" loading="lazy">
+        <a class="credit" href="https://commons.wikimedia.org/wiki/File:%EA%B5%AD%EB%A6%BD%EC%88%98%EB%AA%A9%EC%9B%90_%EC%A0%84%EB%82%98%EB%AC%B4%EC%88%B2_(Needle_Fir_forest_in_the_Korea_National_Arboretum)_03.jpg" target="_blank" rel="noopener">© Pulpitara · CC BY-SA 3.0</a></figure>
+      <div class="time">12:30 – 14:45 · 🚶 주차 후 숲길 걷기 포함</div>
+      <h3>🌳 국립수목원 (광릉숲) 단풍 산책</h3>
+      <span class="tag hot">11월 초 단풍 절정기</span><span class="tag">외부 주차 + 도보 입장</span>
+      <p>500년 넘게 보존된 광릉숲 속 수목원. 주차 예약이 마감이라 <b>봉선사 주차장</b>에 차를 두고 광릉숲 단풍길을 따라 걸어 들어가요. 차로만 지나치던 숲길을 둘이 걷는 것 자체가 코스예요.</p>
+      <ul>
+        <li>12:30 봉선사 주차장 → 광릉숲길 따라 수목원 정문까지 약 2.5km · 30~35분</li>
+        <li>13:05~14:10 수목원: 정문 → 육림호 → 전나무숲길 (약 1시간)</li>
+        <li>14:10 다시 숲길 따라 주차장으로 (14:45 도착)</li>
+        <li>산림박물관은 리모델링으로 올해 말까지 임시 휴관 — 숲길과 야외 전시원은 정상 운영</li>
+      </ul>
+      <div class="meta">
+        <div><b>운영</b> 11월 09:00~17:00 (입장마감 16:00) · 월요일 휴원</div>
+        <div><b>요금</b> 입장 1인 1,000원 · 봉선사 주차장 유료 (소액)</div>
+        <div><b>주차</b> 봉선사 주차장 (남양주 진접읍 부평리 257-1) — 1~3주차장이 있고 수목원 숲길 걷는 사람들이 많이 이용</div>
+        <div class="warn">⚠ 차 없이 걸어오는 방문객은 예약 없이 현장 발권으로 입장 가능(하루 수용 인원 내). 일요일 점심~15시는 봉선사 주차장도 붐비니 12:30 전후 도착 목표. 출발 전 ☎ 031-540-2000으로 도보 입장 가능 여부 확인 추천</div>
+      </div>
+      <div class="maps">
+        <a href="https://map.kakao.com/link/to/봉선사주차장,37.74717,127.18697" target="_blank" rel="noopener">🅿 봉선사 주차장 길찾기</a>
+        <a href="https://reservenew.kna.go.kr/" target="_blank" rel="noopener">예약 사이트 (당일 취소분)</a>
+        <a href="https://map.naver.com/p/search/국립수목원" target="_blank" rel="noopener">네이버지도</a>
+        <a href="https://map.kakao.com/link/search/국립수목원" target="_blank" rel="noopener">카카오맵</a>
+      </div>
+      <div class="alt"><b>Plan B</b> 봉선사 주차장이 꽉 찼으면 → 근처 <b>광릉(세조릉) 주차장</b>(1,000원, 광릉 입장권으로 사용)에 대고 조선 왕릉을 잠깐 본 뒤 숲길로 걸어가기. 둘 다 어려우면 수목원은 건너뛰고 광릉 + 물꼬방 앞 고모저수지 둘레길 산책으로 대체</div>
     </div>
   </div>
 
 
-  <div class="stop drive"><div class="drive-line"><b>12:10</b> 차로 약 10분 (고모리 저수지 방면)</div></div>
+
+  <div class="stop drive"><div class="drive-line"><b>14:45</b> 차로 약 15분 (고모리 저수지 방면)</div></div>
 
   <div class="stop">
     <div class="card">
@@ -204,11 +241,11 @@
         <span class="badge">메뉴 예시 · 계란쌍화차</span>
         <a class="more" href="https://map.naver.com/p/search/물꼬방 포천" target="_blank" rel="noopener">📷 한옥 사진</a>
         <a class="credit" href="https://commons.wikimedia.org/wiki/File:Ssanghwacha_with_an_egg_yolk.jpg" target="_blank" rel="noopener">© 허수자 · CC BY 2.0 KR</a></figure>
-      <div class="time">12:20 – 13:20 · ☕ 예쁜 카페</div>
+      <div class="time">15:00 – 15:50 · 🍡 한옥 카페 디저트</div>
       <h3>🏯 물꼬방 — 100년 된 한옥 카페</h3>
       <span class="tag hot">오늘의 카페</span><span class="tag">한옥</span><span class="tag">노키즈존</span>
-      <p>종로에 있던 100년 넘은 한옥 두 채를 옮겨와 'ㄷ'자로 복원한 카페. 금강송 서까래와 전통 기와 아래, 마당 단풍을 보며 대추차·쌍화차를 마시는 고즈넉한 시간. 기념일 사진 찍기 제일 좋은 곳이에요. 든든하게 먹은 뒤라 차 한잔과 디저트로 딱이에요.</p>
-      <ul><li>추천: 대추차, 계란쌍화차 + 한과/디저트</li></ul>
+      <p>종로에 있던 100년 넘은 한옥 두 채를 옮겨와 'ㄷ'자로 복원한 카페. 금강송 서까래와 전통 기와 아래, 마당 단풍을 보며 대추차·쌍화차를 마시는 고즈넉한 시간. 기념일 사진 찍기 제일 좋은 곳이에요. 숲길을 걷고 난 뒤 따뜻한 차와 디저트로 쉬어가기 딱이에요.</p>
+      <ul><li>추천: 대추차 · 계란쌍화차 + <b>떡 3종</b>(달지 않고 고소하다는 평) · 계절 빙수(홍시·단호박)</li></ul>
       <div class="meta">
         <div><b>주소</b> 포천시 소흘읍 고모루성길 258</div>
         <div><b>영업</b> 11:00~20:30 (설·추석 당일 휴무)</div>
@@ -227,47 +264,19 @@
   </div>
 
 
-  <div class="stop drive"><div class="drive-line"><b>13:20</b> 차로 약 10분 · 광릉숲 단풍길</div></div>
 
-  <div class="stop">
-    <div class="card">
-      <figure class="photo"><img src="images/arboretum.jpg" alt="국립수목원 전나무숲" loading="lazy">
-        <a class="credit" href="https://commons.wikimedia.org/wiki/File:%EA%B5%AD%EB%A6%BD%EC%88%98%EB%AA%A9%EC%9B%90_%EC%A0%84%EB%82%98%EB%AC%B4%EC%88%B2_(Needle_Fir_forest_in_the_Korea_National_Arboretum)_03.jpg" target="_blank" rel="noopener">© Pulpitara · CC BY-SA 3.0</a></figure>
-      <div class="time">13:30 – 15:00</div>
-      <h3>🌳 국립수목원 (광릉숲) 단풍 산책</h3>
-      <span class="tag hot">11월 초 단풍 절정기</span><span class="tag">사전예약 필수</span>
-      <p>500년 넘게 보존된 광릉숲 속 수목원. 전나무숲길·숲생태관찰로·육림호 주변을 천천히 걸으며 배부른 몸으로 산책하기 좋아요. 육림호 데크는 둘이 사진 찍기 좋은 곳.</p>
-      <ul>
-        <li>추천 동선: 정문 → 육림호 → 전나무숲길 → 수생식물원 (약 1시간 20분)</li>
-        <li>산림박물관은 리모델링으로 올해 말까지 임시 휴관 — 숲길과 야외 전시원은 정상 운영</li>
-      </ul>
-      <div class="meta">
-        <div><b>운영</b> 09:00~17:00 (동절기 입장마감 16:00) · 월요일 휴원</div>
-        <div><b>요금</b> 입장 1인 1,000원 · 주차 3,000원</div>
-        <div class="warn">⚠ 자차는 입장+주차 사전예약 없으면 주차장 진입 불가 → 지금 바로 예약! 주차가 오전(09~13시)·오후(13~18시)로 나뉘어 있으면 <u>오후</u>로 선택</div>
-      </div>
-      <div class="maps">
-        <a href="https://kna.forest.go.kr" target="_blank" rel="noopener">예약 사이트</a>
-        <a href="https://map.naver.com/p/search/국립수목원" target="_blank" rel="noopener">네이버지도</a>
-        <a href="https://map.kakao.com/link/search/국립수목원" target="_blank" rel="noopener">카카오맵</a>
-      </div>
-      <div class="alt"><b>Plan B</b> 예약 마감 시 → 물꼬방 앞 고모리 저수지 둘레길 산책(무료) + 광릉수목원로 단풍 드라이브로 대체하고 일정 그대로 진행</div>
-    </div>
-  </div>
-
-
-  <div class="stop drive"><div class="drive-line"><b>15:00</b> 차로 약 35분 (신북면)</div></div>
+  <div class="stop drive"><div class="drive-line"><b>15:50</b> 차로 약 30분 (신북면)</div></div>
 
   <div class="stop">
     <div class="card">
       <figure class="photo"><img src="images/artvalley.jpg" alt="포천아트밸리 천주호와 화강암 절벽" loading="lazy">
         <a class="credit" href="https://commons.wikimedia.org/wiki/File:Art_Valley_In_Korea_(65750913).jpeg" target="_blank" rel="noopener">© Sakku Cat · CC BY 3.0</a></figure>
-      <div class="time">15:35 – 16:50</div>
+      <div class="time">16:20 – 17:25</div>
       <h3>💎 포천아트밸리 — 채석장 절벽과 에메랄드 천주호</h3>
       <span class="tag hot">늦은 오후 빛이 예쁜 곳</span><span class="tag">모노레일</span>
       <p>버려진 화강암 채석장이 문화공간으로 바뀐 곳. 깎아지른 절벽 아래 에메랄드빛 천주호와 단풍이 어우러져요. 올라갈 땐 모노레일, 내려올 땐 조각공원 산책로로 걸어 내려오는 코스 추천.</p>
       <div class="meta">
-        <div><b>운영</b> 11~2월 매일 09:00~18:00 · <span class="warn">입장마감 17:00</span> · 매월 첫째 화 휴장</div>
+        <div><b>운영</b> 11~2월 매일 09:00~18:00 · <span class="warn">입장마감 17:00 (꼭 지키기!)</span> · 매월 첫째 화 휴장</div>
         <div><b>요금</b> 성인 6,000원 (2,000원 지역상품권 환급) · 모노레일 왕복 5,800원 · 주차 무료</div>
         <div><b>팁</b> 환급받은 상품권은 저녁 식당에서 써보기</div>
       </div>
@@ -278,21 +287,21 @@
     </div>
   </div>
 
-  <div class="stop drive"><div class="drive-line"><b>16:50</b> 차로 약 15분 · 해 지는 시간 17:30 무렵</div></div>
+  <div class="stop drive"><div class="drive-line"><b>17:25</b> 차로 약 15분 · 해 지는 시간 17:30 무렵, 노을 보며 이동</div></div>
 
   <div class="stop night">
     <div class="card">
       <figure class="photo"><img src="images/herbisland.jpg" alt="허브아일랜드 꽃정원" loading="lazy">
         <a class="more" href="https://map.naver.com/p/search/허브아일랜드" target="_blank" rel="noopener">📷 야경 사진</a>
         <a class="credit" href="https://commons.wikimedia.org/wiki/File:Korea-Pocheon-Herb_Island-Sunflower_an_others-01.jpg" target="_blank" rel="noopener">© Jinho Jung · CC BY-SA 2.0</a></figure>
-      <div class="time">17:05 – 19:00</div>
+      <div class="time">17:40 – 19:00</div>
       <h3>✨ 허브아일랜드 — 해질녘부터 불빛동화</h3>
       <span class="tag hot">노을 → 점등</span><span class="tag">지중해 마을</span>
       <p>지중해풍 허브 마을. 노을 무렵 들어가 허브식물박물관·베네치아 마을을 둘러보고, 날이 어두워지면 불빛터널과 산타마을 조명이 켜져요. 하루의 하이라이트 사진은 여기서 💛</p>
       <div class="meta">
         <div><b>운영</b> 일요일 10:00 오픈 · 마감 19:00~21:00 (시즌별 상이) · 입장은 마감 1시간 전까지 · 수요일 휴무</div>
         <div><b>요금</b> 주말 성인 12,000원 · 주차 무료 · 재입장 불가</div>
-        <div class="warn">⚠ 11월 마감 시간이 시즌마다 바뀌니 전날 홈페이지에서 확인 (17:05 입장이면 어느 쪽이든 OK)</div>
+        <div class="warn">⚠ 일요일 마감이 19시인 시즌이면 입장마감 18시 → 17:40 도착은 OK지만 늦지 않게! 전날 홈페이지에서 11월 운영시간 확인</div>
       </div>
       <div class="maps">
         <a href="https://www.herbisland.co.kr/" target="_blank" rel="noopener">홈페이지</a>
@@ -341,21 +350,13 @@
 <h2>✅ 출발 전 체크리스트</h2>
 <p class="progress" id="progress"></p>
 <div class="check" id="check">
-  <label><input type="checkbox" data-k="c1"><span>국립수목원 입장 + 차량 예약 (11/1 오후, 13:30 입장)<small>kna.forest.go.kr · 차량번호 필수 · 주차 시간대가 있으면 오후 선택 · 만석이면 Plan B</small></span></label>
+  <label><input type="checkbox" data-k="c1"><span>국립수목원 도보 입장 가능 여부 전화 확인<small>☎ 031-540-2000 · 예약 사이트 당일 취소분도 한 번 체크 (나오면 주차 예약으로 전환)</small></span></label>
   <label><input type="checkbox" data-k="c2"><span>전날 허브아일랜드 11월 운영시간 확인<small>herbisland.co.kr</small></span></label>
   <label><input type="checkbox" data-k="c3"><span>전날 포천 날씨 확인 · 비 오면 한옥카페·허브식물박물관 비중 늘리기</span></label>
-  <label><input type="checkbox" data-k="c4"><span>따뜻한 겉옷 챙기기<small>11월 초 포천 저녁은 서울보다 꽤 쌀쌀해요</small></span></label>
+  <label><input type="checkbox" data-k="c4"><span>따뜻한 겉옷 + 편한 운동화 (숲길 왕복 5km)<small>11월 초 포천 저녁은 서울보다 꽤 쌀쌀해요</small></span></label>
   <label><input type="checkbox" data-k="c5"><span>보조배터리 · 기념사진용 삼각대/셀카봉<small>※ 국립수목원은 삼각대 반입 금지일 수 있음</small></span></label>
   <label><input type="checkbox" data-k="c6"><span>주유 · 하이패스 확인</span></label>
   <label><input type="checkbox" data-k="c7"><span>작은 3주년 선물 💝<small>3주년은 '가죽혼식' — 가죽 지갑·카드케이스·키링 같은 선물이 전통이에요</small></span></label>
-</div>
-
-<h2>💡 알아두면 좋은 것</h2>
-<div class="tips">
-  <div class="tip"><b>🍂 명성산 억새꽃축제는?</b>올해 축제는 10월 중순에 끝났고, 산정호수는 동선상 왕복 1시간 이상 추가돼서 이번 코스에선 뺐어요. 다음 가을 1박 여행지로 남겨두기!</div>
-  <div class="tip"><b>🅿 주차</b>오늘 방문지는 모두 전용 주차장 있음. 국립수목원만 사전예약 필수.</div>
-  <div class="tip"><b>⏱ 시간이 밀리면</b>수목원 산책을 1시간으로 줄이세요. 수목원 입장마감 16:00, 아트밸리 입장마감 17:00만 지키면 나머지는 유연해요.</div>
-  <div class="tip"><b>💰 대략 입장료 (2인)</b>수목원 2,000 + 주차 3,000 · 아트밸리 12,000(상품권 4,000 환급) + 모노레일 11,600 · 허브아일랜드 24,000 → 약 5만 원 + 식사·카페</div>
 </div>
 
 <div class="letter">
@@ -381,16 +382,16 @@
   // Route map
   var stops=[
     {n:'집',   t:'10:00 출발',        name:'성남 수정구 (적푸리로)', lat:37.4343, lng:127.0832, k:'home'},
-    {n:'1',    t:'11:00 아점',         name:'광릉한옥집',           lat:37.74302, lng:127.19935, img:'images/bulgogi.jpg'},
-    {n:'2',    t:'12:20 한옥 카페',    name:'물꼬방',               lat:37.79570, lng:127.15942, img:'images/ssanghwacha.jpg'},
-    {n:'3',    t:'13:30 단풍 산책',    name:'국립수목원',           lat:37.75976, lng:127.16888, img:'images/arboretum.jpg'},
-    {n:'4',    t:'15:35 천주호',       name:'포천아트밸리',         lat:37.92314, lng:127.23714, img:'images/artvalley.jpg'},
-    {n:'5',    t:'17:05 불빛동화',     name:'허브아일랜드',         lat:37.96539, lng:127.13167, k:'night', img:'images/herbisland.jpg'},
+    {n:'1',    t:'11:00 브런치',       name:'카페아리',             lat:37.82461, lng:127.15570, img:'images/brunch.jpg'},
+    {n:'2',    t:'12:30 숲길 + 수목원', name:'국립수목원',           lat:37.75976, lng:127.16888, img:'images/arboretum.jpg'},
+    {n:'3',    t:'15:00 한옥 디저트',  name:'물꼬방',               lat:37.79570, lng:127.15942, img:'images/ssanghwacha.jpg'},
+    {n:'4',    t:'16:20 천주호',       name:'포천아트밸리',         lat:37.92314, lng:127.23714, img:'images/artvalley.jpg'},
+    {n:'5',    t:'17:40 불빛동화',     name:'허브아일랜드',         lat:37.96539, lng:127.13167, k:'night', img:'images/herbisland.jpg'},
     {n:'6',    t:'19:30 이동갈비',     name:'갈비장터',             lat:37.82710, lng:127.14535, img:'images/galbi.jpg'},
     {n:'집',   t:'~21:45 도착',        name:'집으로',               lat:37.4343, lng:127.0832, k:'home', back:true}
   ];
   var legs=document.getElementById('legs');
-  var kakao=function(s){return 'https://map.kakao.com/link/to/'+encodeURIComponent(s.name)+','+s.lat+','+s.lng;};
+  var kakao=function(s){if(s.name==='국립수목원')return 'https://map.kakao.com/link/to/봉선사주차장,37.74717,127.18697';return 'https://map.kakao.com/link/to/'+encodeURIComponent(s.name)+','+s.lat+','+s.lng;};
   stops.forEach(function(s,i){
     var li=document.createElement('li'); li.dataset.i=i;
     li.innerHTML='<span class="num '+(s.k||'')+'">'+s.n+'</span><span class="nm">'+s.name+'<small>'+s.t+'</small></span>'+
@@ -428,7 +429,12 @@
       map.addLayer({id:'go-casing',type:'line',source:'go',layout:{'line-join':'round','line-cap':'round'},paint:{'line-color':'#fffaf3','line-width':8}});
       map.addLayer({id:'go',type:'line',source:'go',layout:{'line-join':'round','line-cap':'round'},paint:{'line-color':'#b5532a','line-width':4}});
       map.addLayer({id:'back',type:'line',source:'back',layout:{'line-cap':'round'},paint:{'line-color':'#6f625a','line-width':3,'line-dasharray':[1.5,2]}});
+      map.addSource('walk',{type:'geojson',data:{type:'Feature',geometry:{type:'LineString',coordinates:[[PARK.lng,PARK.lat],[127.1800,37.7530],[127.1689,37.7598]]}}});
+      map.addLayer({id:'walk',type:'line',source:'walk',layout:{'line-cap':'round'},paint:{'line-color':'#5b6b3a','line-width':3,'line-dasharray':[0.5,1.6]}});
     });
+    var PARK={lat:37.74717,lng:127.18697};
+    (function(){var el=document.createElement('div');el.innerHTML='<div class="ppin">P</div>';
+      new maplibregl.Marker({element:el}).setLngLat([PARK.lng,PARK.lat]).setPopup(new maplibregl.Popup({offset:14,closeButton:false,focusAfterOpen:false}).setHTML('<div class="pop-tx"><b>🅿 봉선사 주차장</b><br>12:30 주차 → 숲길 걸어서 수목원 (30~35분)<br><a href="https://map.kakao.com/link/to/봉선사주차장,37.74717,127.18697" target="_blank" rel="noopener">카카오맵 길찾기 →</a></div>')).addTo(map);})();
     var markers=[];
     stops.forEach(function(s,i){
       if(s.back){markers.push(markers[0]);return;}
