@@ -1,0 +1,341 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>우리의 3주년 · 포천 가을 하루</title>
+<meta name="description" content="2026.11.01 일요일, 결혼 3주년 기념 포천 당일치기 일정">
+<meta property="og:title" content="우리의 3주년 · 포천 가을 하루">
+<meta property="og:description" content="11/1(일) 10:00 출발 → 22:00 귀가. 수목원 단풍, 한옥 카페, 채석장 호수, 불빛축제, 이동갈비.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Gowun+Batang:wght@400;700&family=Noto+Sans+KR:wght@400;500;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --bg:#f7f1e8; --paper:#fffaf3; --ink:#2b2420; --sub:#6f625a; --line:#e6d9c8;
+    --leaf:#b5532a; --leaf-soft:#f3dccd; --gold:#c8963e; --moss:#5b6b3a; --night:#2a2747;
+    --chip:#efe4d5; --shadow:0 1px 2px rgba(60,40,20,.06),0 8px 24px rgba(60,40,20,.06);
+  }
+  @media (prefers-color-scheme: dark){
+    :root:not([data-theme="light"]){
+      --bg:#1b1715; --paper:#25201d; --ink:#f1e8de; --sub:#b7a99d; --line:#3a322d;
+      --leaf:#e08a5f; --leaf-soft:#3b2a22; --gold:#e0b46a; --moss:#a3b57a; --night:#a9a4e6;
+      --chip:#2f2925; --shadow:none;
+    }
+  }
+  :root[data-theme="dark"]{
+    --bg:#1b1715; --paper:#25201d; --ink:#f1e8de; --sub:#b7a99d; --line:#3a322d;
+    --leaf:#e08a5f; --leaf-soft:#3b2a22; --gold:#e0b46a; --moss:#a3b57a; --night:#a9a4e6;
+    --chip:#2f2925; --shadow:none;
+  }
+  *{box-sizing:border-box}
+  html{-webkit-text-size-adjust:100%}
+  body{margin:0;background:var(--bg);color:var(--ink);font:16px/1.65 "Noto Sans KR",system-ui,sans-serif;}
+  a{color:var(--leaf)}
+  .wrap{max-width:720px;margin:0 auto;padding:0 16px 64px}
+
+  /* hero */
+  header.hero{padding:56px 0 28px;text-align:center;position:relative}
+  .eyebrow{letter-spacing:.2em;font-size:12px;color:var(--sub);text-transform:uppercase}
+  h1{font-family:"Gowun Batang",serif;font-weight:700;font-size:clamp(30px,8vw,46px);line-height:1.25;margin:10px 0 8px}
+  h1 em{font-style:normal;color:var(--leaf)}
+  .hero p{color:var(--sub);margin:0}
+  .dday{display:inline-flex;gap:10px;align-items:center;margin-top:20px;padding:8px 16px;border:1px solid var(--line);border-radius:999px;background:var(--paper);font-size:14px}
+  .dday b{color:var(--leaf);font-size:16px}
+  .leaves{font-size:22px;letter-spacing:6px;opacity:.85;margin-bottom:6px}
+
+  /* summary strip */
+  .strip{display:grid;grid-template-columns:repeat(3,1fr);gap:8px;margin:8px 0 28px}
+  .strip div{background:var(--paper);border:1px solid var(--line);border-radius:14px;padding:12px 10px;text-align:center}
+  .strip small{display:block;color:var(--sub);font-size:12px}
+  .strip strong{font-size:15px}
+
+  h2{font-family:"Gowun Batang",serif;font-size:22px;margin:36px 0 14px;display:flex;align-items:center;gap:8px}
+  h2 .n{font-family:"Noto Sans KR";font-size:12px;color:var(--sub);font-weight:500;margin-left:auto}
+
+  /* timeline */
+  .tl{position:relative;margin-left:8px;padding-left:22px;border-left:2px dashed var(--line)}
+  .stop{position:relative;margin-bottom:14px}
+  .stop::before{content:"";position:absolute;left:-30px;top:20px;width:12px;height:12px;border-radius:50%;background:var(--paper);border:3px solid var(--leaf)}
+  .stop.drive::before{border-color:var(--line);width:8px;height:8px;left:-27px;top:13px;border-width:2px}
+  .card{background:var(--paper);border:1px solid var(--line);border-radius:16px;padding:16px;box-shadow:var(--shadow)}
+  .time{font-weight:700;color:var(--leaf);font-size:14px;letter-spacing:.02em}
+  .card h3{font-family:"Gowun Batang",serif;font-size:20px;margin:2px 0 6px;line-height:1.35}
+  .tag{display:inline-block;font-size:12px;padding:2px 9px;border-radius:999px;background:var(--chip);color:var(--sub);margin:0 4px 4px 0}
+  .tag.hot{background:var(--leaf-soft);color:var(--leaf);font-weight:500}
+  .card p{margin:8px 0}
+  .card ul{margin:8px 0;padding-left:18px}
+  .card li{margin:3px 0}
+  .meta{font-size:13.5px;color:var(--sub);border-top:1px solid var(--line);margin-top:12px;padding-top:10px;display:grid;gap:3px}
+  .meta b{color:var(--ink);font-weight:500}
+  .maps{display:flex;gap:6px;flex-wrap:wrap;margin-top:10px}
+  .maps a{font-size:13px;text-decoration:none;padding:6px 12px;border-radius:10px;border:1px solid var(--line);color:var(--ink);background:var(--bg)}
+  .maps a:hover{border-color:var(--leaf)}
+  .drive-line{font-size:13.5px;color:var(--sub);padding:2px 0 4px}
+  .alt{margin-top:10px;background:var(--bg);border-radius:12px;padding:10px 12px;font-size:14px}
+  .alt b{color:var(--moss)}
+  .warn{color:var(--leaf);font-weight:500}
+  .night .card{background:linear-gradient(180deg,var(--paper),var(--paper));border-color:color-mix(in srgb,var(--night) 35%,var(--line))}
+  .night .time{color:var(--night)}
+  .stop.night::before{border-color:var(--night)}
+  .stop.home::before{background:var(--leaf)}
+
+  /* checklist */
+  .check{background:var(--paper);border:1px solid var(--line);border-radius:16px;padding:6px 14px}
+  .check label{display:flex;gap:12px;align-items:flex-start;padding:12px 0;border-bottom:1px solid var(--line);cursor:pointer}
+  .check label:last-child{border-bottom:0}
+  .check input{width:20px;height:20px;accent-color:var(--leaf);margin-top:3px;flex:none}
+  .check span small{display:block;color:var(--sub);font-size:13px}
+  .check input:checked + span{opacity:.5;text-decoration:line-through}
+  .progress{font-size:13px;color:var(--sub);margin:-6px 0 10px}
+
+  /* tips */
+  .tips{display:grid;gap:10px}
+  .tip{background:var(--paper);border:1px solid var(--line);border-radius:14px;padding:12px 14px;font-size:14.5px}
+  .tip b{display:block;margin-bottom:2px}
+
+  .letter{margin-top:40px;text-align:center;font-family:"Gowun Batang",serif;padding:28px 18px;border-radius:18px;background:var(--leaf-soft);color:var(--ink)}
+  .letter p{margin:6px 0}
+  footer{margin-top:36px;font-size:12.5px;color:var(--sub)}
+  footer a{color:var(--sub)}
+  .toggle{position:fixed;right:14px;bottom:14px;border:1px solid var(--line);background:var(--paper);color:var(--ink);border-radius:999px;padding:8px 12px;font-size:13px;box-shadow:var(--shadow);cursor:pointer}
+  @media (max-width:420px){ .strip strong{font-size:14px} .card h3{font-size:18px} }
+</style>
+</head>
+<body>
+<div class="wrap">
+
+<header class="hero">
+  <div class="leaves">🍁 🍂 🍁</div>
+  <div class="eyebrow">2023.10.28 → 2026.10.28</div>
+  <h1>우리의 <em>3주년</em>,<br>포천에서 보내는 가을 하루</h1>
+  <p>2026년 11월 1일 일요일 · 당일치기 드라이브</p>
+  <div class="dday" id="dday">D-day 계산 중…</div>
+</header>
+
+<section class="strip" aria-label="요약">
+  <div><small>출발</small><strong>10:00 성남</strong></div>
+  <div><small>이동</small><strong>🚗 자차</strong></div>
+  <div><small>귀가</small><strong>~21:50</strong></div>
+</section>
+
+<h2>🗓 하루 일정 <span class="n">숲 → 한옥카페 → 호수 → 불빛 → 갈비</span></h2>
+
+<div class="tl">
+
+  <div class="stop drive"><div class="drive-line"><b>10:00</b> 성남 수정구 출발 → 서울외곽순환 → 퇴계원IC → 광릉수목원로 · 약 50~60분</div></div>
+
+  <div class="stop">
+    <div class="card">
+      <div class="time">11:00 – 12:30</div>
+      <h3>🌳 국립수목원 (광릉숲) 단풍 산책</h3>
+      <span class="tag hot">11월 초 단풍 절정기</span><span class="tag">사전예약 필수</span>
+      <p>500년 넘게 보존된 광릉숲 속 수목원. 전나무숲길·숲생태관찰로·육림호 주변을 천천히 걸으며 가을을 시작해요. 육림호 데크는 둘이 사진 찍기 좋은 곳.</p>
+      <ul>
+        <li>추천 동선: 정문 → 육림호 → 전나무숲길 → 수생식물원 (약 1시간 30분)</li>
+        <li>산림박물관은 리모델링으로 올해 말까지 임시 휴관 — 숲길과 야외 전시원은 정상 운영</li>
+      </ul>
+      <div class="meta">
+        <div><b>운영</b> 09:00~17:00 (동절기 입장마감 16:00) · 월요일 휴원</div>
+        <div><b>요금</b> 입장 1인 1,000원 · 주차 3,000원</div>
+        <div class="warn">⚠ 자차는 입장+주차 사전예약 없으면 주차장 진입 불가 → 지금 바로 예약!</div>
+      </div>
+      <div class="maps">
+        <a href="https://kna.forest.go.kr" target="_blank" rel="noopener">예약 사이트</a>
+        <a href="https://map.naver.com/p/search/국립수목원" target="_blank" rel="noopener">네이버지도</a>
+        <a href="https://map.kakao.com/link/search/국립수목원" target="_blank" rel="noopener">카카오맵</a>
+      </div>
+      <div class="alt"><b>Plan B</b> 예약 마감 시 → 광릉수목원로 단풍 드라이브 후 고모리 저수지 둘레길 산책(무료)으로 대체하고 일정 그대로 진행</div>
+    </div>
+  </div>
+
+  <div class="stop drive"><div class="drive-line"><b>12:30</b> 차로 약 5분</div></div>
+
+  <div class="stop">
+    <div class="card">
+      <div class="time">12:40 – 13:50 · 점심</div>
+      <h3>🍖 광릉한옥집 — 숯불고기 메밀쌈 & 평양냉면</h3>
+      <span class="tag hot">점심</span><span class="tag">한옥</span><span class="tag">웨이팅 있음</span>
+      <p>'광릉식 불고기'로 유명한 집. 숯불에 구운 돼지·소 불고기를 얇은 메밀전병에 장아찌·나물과 싸 먹는 게 시그니처예요. 메밀 70% 평양냉면도 함께.</p>
+      <ul><li>추천: 돼지숯불고기 메밀쌈 + 평양냉면 1 (양이 넉넉한 편)</li></ul>
+      <div class="meta">
+        <div><b>주소</b> 남양주시 진접읍 광릉내로 36</div>
+        <div><b>영업</b> 주말 11:00~20:50 (L.O 20:00) · 화요일 휴무</div>
+        <div><b>팁</b> 도착하면 바로 대기 등록, 대기 중 미리 주문 가능</div>
+      </div>
+      <div class="maps">
+        <a href="https://map.naver.com/p/search/광릉한옥집" target="_blank" rel="noopener">네이버지도</a>
+        <a href="https://map.kakao.com/link/search/광릉한옥집" target="_blank" rel="noopener">카카오맵</a>
+      </div>
+      <div class="alt"><b>대안</b> 광릉불고기 (진접읍 광릉내로82번길 40-1) — 숯불 돼지불고기 + 반찬 맛집, 일요일 11:00~20:50, 월 휴무</div>
+    </div>
+  </div>
+
+  <div class="stop drive"><div class="drive-line"><b>13:50</b> 차로 약 10~15분 (고모리 저수지 방면)</div></div>
+
+  <div class="stop">
+    <div class="card">
+      <div class="time">14:05 – 15:20 · ☕ 예쁜 카페</div>
+      <h3>🏯 물꼬방 — 100년 된 한옥 카페</h3>
+      <span class="tag hot">오늘의 카페</span><span class="tag">한옥</span><span class="tag">노키즈존</span>
+      <p>종로에 있던 100년 넘은 한옥 두 채를 옮겨와 'ㄷ'자로 복원한 카페. 금강송 서까래와 전통 기와 아래, 마당 단풍을 보며 대추차·쌍화차를 마시는 고즈넉한 시간. 기념일 사진 찍기 제일 좋은 곳이에요.</p>
+      <ul><li>추천: 대추차, 계란쌍화차 + 한과/디저트</li></ul>
+      <div class="meta">
+        <div><b>주소</b> 포천시 소흘읍 고모루성길 258</div>
+        <div><b>영업</b> 11:00~20:30 (설·추석 당일 휴무)</div>
+        <div><b>참고</b> 1인 1메뉴 · 주말 이용시간 2시간 제한 · 웨이팅 가능</div>
+      </div>
+      <div class="maps">
+        <a href="https://map.naver.com/p/search/물꼬방 포천" target="_blank" rel="noopener">네이버지도</a>
+        <a href="https://map.kakao.com/link/search/물꼬방 포천" target="_blank" rel="noopener">카카오맵</a>
+      </div>
+      <div class="alt">
+        <b>다른 예쁜 카페 후보</b><br>
+        · <b>포옥</b> (죽엽산로 685-20) — 경기도 건축문화상 대상 받은 건축 카페, 호두 말렌카 케이크. 10:30~19:00, 목 휴무<br>
+        · <b>고모리691</b> (고모루성길 267) — 고모저수지 뷰 테라스 대형 카페, 11:30~21:00 연중무휴. 물꼬방 바로 근처라 웨이팅 길면 여기로
+      </div>
+    </div>
+  </div>
+
+  <div class="stop drive"><div class="drive-line"><b>15:20</b> 차로 약 30분 (신북면)</div></div>
+
+  <div class="stop">
+    <div class="card">
+      <div class="time">15:50 – 17:05</div>
+      <h3>💎 포천아트밸리 — 채석장 절벽과 에메랄드 천주호</h3>
+      <span class="tag hot">늦은 오후 빛이 예쁜 곳</span><span class="tag">모노레일</span>
+      <p>버려진 화강암 채석장이 문화공간으로 바뀐 곳. 깎아지른 절벽 아래 에메랄드빛 천주호와 단풍이 어우러져요. 올라갈 땐 모노레일, 내려올 땐 조각공원 산책로로 걸어 내려오는 코스 추천.</p>
+      <div class="meta">
+        <div><b>운영</b> 11~2월 매일 09:00~18:00 · <span class="warn">입장마감 17:00</span> · 매월 첫째 화 휴장</div>
+        <div><b>요금</b> 성인 6,000원 (2,000원 지역상품권 환급) · 모노레일 왕복 5,800원 · 주차 무료</div>
+        <div><b>팁</b> 환급받은 상품권은 저녁 식당에서 써보기</div>
+      </div>
+      <div class="maps">
+        <a href="https://map.naver.com/p/search/포천아트밸리" target="_blank" rel="noopener">네이버지도</a>
+        <a href="https://map.kakao.com/link/search/포천아트밸리" target="_blank" rel="noopener">카카오맵</a>
+      </div>
+    </div>
+  </div>
+
+  <div class="stop drive"><div class="drive-line"><b>17:05</b> 차로 약 10분 · 해 지는 시간 17:30 무렵</div></div>
+
+  <div class="stop night">
+    <div class="card">
+      <div class="time">17:15 – 19:00</div>
+      <h3>✨ 허브아일랜드 — 해질녘부터 불빛동화</h3>
+      <span class="tag hot">노을 → 점등</span><span class="tag">지중해 마을</span>
+      <p>지중해풍 허브 마을. 노을 무렵 들어가 허브식물박물관·베네치아 마을을 둘러보고, 날이 어두워지면 불빛터널과 산타마을 조명이 켜져요. 하루의 하이라이트 사진은 여기서 💛</p>
+      <div class="meta">
+        <div><b>운영</b> 일요일 10:00 오픈 · 마감 19:00~21:00 (시즌별 상이) · 입장은 마감 1시간 전까지 · 수요일 휴무</div>
+        <div><b>요금</b> 주말 성인 12,000원 · 주차 무료 · 재입장 불가</div>
+        <div class="warn">⚠ 11월 마감 시간이 시즌마다 바뀌니 전날 홈페이지에서 확인 (17:15 입장이면 어느 쪽이든 OK)</div>
+      </div>
+      <div class="maps">
+        <a href="https://www.herbisland.co.kr/" target="_blank" rel="noopener">홈페이지</a>
+        <a href="https://map.naver.com/p/search/허브아일랜드" target="_blank" rel="noopener">네이버지도</a>
+        <a href="https://map.kakao.com/link/search/허브아일랜드" target="_blank" rel="noopener">카카오맵</a>
+      </div>
+    </div>
+  </div>
+
+  <div class="stop drive"><div class="drive-line"><b>19:00</b> 차로 약 25~30분 · 귀갓길 방향(소흘읍 송우리)</div></div>
+
+  <div class="stop">
+    <div class="card">
+      <div class="time">19:30 – 20:45 · 저녁</div>
+      <h3>🔥 갈비장터 — 포천에 왔으면 이동갈비</h3>
+      <span class="tag hot">저녁</span><span class="tag">귀갓길 동선</span><span class="tag">연중무휴</span>
+      <p>저녁은 포천 대표 음식 이동갈비로 기념일 마무리. 송우리 시내라 고속도로 IC와 가까워 식사 후 바로 귀가할 수 있어요. 밑반찬·샐러드가 푸짐하게 나와요.</p>
+      <ul><li>추천: 장터 이동갈비 2인 + 물냉면 / 된장찌개</li></ul>
+      <div class="meta">
+        <div><b>주소</b> 포천시 소흘읍 솔모루로58번길 4-1</div>
+        <div><b>영업</b> 10:00~22:00 (L.O 21:00) · 연중무휴</div>
+      </div>
+      <div class="maps">
+        <a href="https://map.naver.com/p/search/갈비장터 포천" target="_blank" rel="noopener">네이버지도</a>
+        <a href="https://map.kakao.com/link/search/갈비장터 포천" target="_blank" rel="noopener">카카오맵</a>
+      </div>
+      <div class="alt"><b>분위기 원하면</b> 명지원 이동갈비 (일동면 화동로 1258) — 한옥 외관이 예쁜 노포, 동치미국수가 일품. 단, 허브아일랜드에서 북쪽으로 20분 더 가야 해서 귀가가 30분쯤 늦어져요.</div>
+    </div>
+  </div>
+
+  <div class="stop drive"><div class="drive-line"><b>20:45</b> 구리포천고속도로 → 서울외곽순환 · 약 50~60분</div></div>
+
+  <div class="stop home">
+    <div class="card">
+      <div class="time">~21:45</div>
+      <h3>🏡 집 도착</h3>
+      <p>목표 22:00 귀가에 여유 15분. 일요일 저녁 상행 정체가 있으면 조금 늦어질 수 있어요.</p>
+    </div>
+  </div>
+</div>
+
+<h2>✅ 출발 전 체크리스트</h2>
+<p class="progress" id="progress"></p>
+<div class="check" id="check">
+  <label><input type="checkbox" data-k="c1"><span>국립수목원 입장 + 차량 예약 (11/1 오전)<small>kna.forest.go.kr · 차량번호 필수 · 만석이면 Plan B</small></span></label>
+  <label><input type="checkbox" data-k="c2"><span>전날 허브아일랜드 11월 운영시간 확인<small>herbisland.co.kr</small></span></label>
+  <label><input type="checkbox" data-k="c3"><span>전날 포천 날씨 확인 · 비 오면 한옥카페·허브식물박물관 비중 늘리기</span></label>
+  <label><input type="checkbox" data-k="c4"><span>따뜻한 겉옷 챙기기<small>11월 초 포천 저녁은 서울보다 꽤 쌀쌀해요</small></span></label>
+  <label><input type="checkbox" data-k="c5"><span>보조배터리 · 기념사진용 삼각대/셀카봉<small>※ 국립수목원은 삼각대 반입 금지일 수 있음</small></span></label>
+  <label><input type="checkbox" data-k="c6"><span>주유 · 하이패스 확인</span></label>
+  <label><input type="checkbox" data-k="c7"><span>작은 3주년 선물 💝<small>3주년은 '가죽혼식' — 가죽 지갑·카드케이스·키링 같은 선물이 전통이에요</small></span></label>
+</div>
+
+<h2>💡 알아두면 좋은 것</h2>
+<div class="tips">
+  <div class="tip"><b>🍂 명성산 억새꽃축제는?</b>올해 축제는 10월 중순에 끝났고, 산정호수는 동선상 왕복 1시간 이상 추가돼서 이번 코스에선 뺐어요. 다음 가을 1박 여행지로 남겨두기!</div>
+  <div class="tip"><b>🅿 주차</b>오늘 방문지는 모두 전용 주차장 있음. 국립수목원만 사전예약 필수.</div>
+  <div class="tip"><b>⏱ 시간이 밀리면</b>카페 시간을 줄이기보다 아트밸리를 50분 정도로 압축하세요. 아트밸리 입장마감 17:00만 지키면 나머지는 유연해요.</div>
+  <div class="tip"><b>💰 대략 입장료 (2인)</b>수목원 2,000 + 주차 3,000 · 아트밸리 12,000(상품권 4,000 환급) + 모노레일 11,600 · 허브아일랜드 24,000 → 약 5만 원 + 식사·카페</div>
+</div>
+
+<div class="letter">
+  <p style="font-size:20px">🍁</p>
+  <p>세 번째 가을도 함께 걸어줘서 고마워.</p>
+  <p>앞으로의 모든 계절도 같이 보자.</p>
+</div>
+
+<footer>
+  운영시간·요금은 2026년 10월 기준 공개 정보이며 변동될 수 있어요. 출발 전 각 장소 공식 채널을 확인하세요.<br>
+  참고: <a href="https://artvalley.pcfac.or.kr/" target="_blank" rel="noopener">포천아트밸리</a> ·
+  <a href="https://www.herbisland.co.kr/" target="_blank" rel="noopener">허브아일랜드</a> ·
+  <a href="https://kna.forest.go.kr" target="_blank" rel="noopener">국립수목원</a> ·
+  <a href="https://www.pocheon.go.kr/ktour/" target="_blank" rel="noopener">포천시 문화관광</a>
+</footer>
+</div>
+
+<button class="toggle" id="toggle" aria-label="테마 전환">🌙 / ☀️</button>
+
+<script>
+(function(){
+  // D-day
+  var el=document.getElementById('dday');
+  var trip=new Date('2026-11-01T10:00:00+09:00');
+  var now=new Date();
+  var kst=function(d){return new Date(d.getTime()+9*3600e3).toISOString().slice(0,10);};
+  var days=Math.round((Date.parse(kst(trip))-Date.parse(kst(now)))/86400e3);
+  el.innerHTML = days>0 ? '여행까지 <b>D-'+days+'</b>' : days===0 ? '<b>오늘이에요! 🍁</b> 10시 출발' : '함께한 <b>소중한 하루</b> 💛';
+
+  // checklist with safe storage
+  var store={get:function(k){try{return localStorage.getItem(k)}catch(e){return null}},set:function(k,v){try{localStorage.setItem(k,v)}catch(e){}}};
+  var boxes=[].slice.call(document.querySelectorAll('#check input'));
+  var prog=document.getElementById('progress');
+  function upd(){var n=boxes.filter(function(b){return b.checked}).length;prog.textContent=n+' / '+boxes.length+' 완료';}
+  boxes.forEach(function(b){
+    b.checked = store.get('pc3-'+b.dataset.k)==='1';
+    b.addEventListener('change',function(){store.set('pc3-'+b.dataset.k,b.checked?'1':'0');upd();});
+  });
+  upd();
+
+  // theme toggle
+  var root=document.documentElement, t=store.get('pc3-theme');
+  if(t) root.setAttribute('data-theme',t);
+  document.getElementById('toggle').addEventListener('click',function(){
+    var dark = root.getAttribute('data-theme') ? root.getAttribute('data-theme')==='dark' : matchMedia('(prefers-color-scheme: dark)').matches;
+    var nt = dark?'light':'dark'; root.setAttribute('data-theme',nt); store.set('pc3-theme',nt);
+  });
+})();
+</script>
+</body>
+</html>
