@@ -101,6 +101,26 @@
   footer{margin-top:36px;font-size:12.5px;color:var(--sub)}
   footer a{color:var(--sub)}
   .toggle{position:fixed;right:14px;bottom:14px;border:1px solid var(--line);background:var(--paper);color:var(--ink);border-radius:999px;padding:8px 12px;font-size:13px;box-shadow:var(--shadow);cursor:pointer}
+
+  /* sunset timeline */
+  .glow{margin:10px 0 4px;border-radius:12px;overflow:hidden;border:1px solid var(--line)}
+  .glow-row{display:flex;gap:10px;padding:8px 12px;font-size:14px;line-height:1.5;background:linear-gradient(90deg,color-mix(in srgb,var(--night) 10%,var(--paper)),var(--paper))}
+  .glow-row+.glow-row{border-top:1px solid var(--line)}
+  .glow-row.hot{background:linear-gradient(90deg,color-mix(in srgb,var(--night) 22%,var(--paper)),var(--paper))}
+  .glow .gt{flex:none;width:84px;font-weight:700;color:var(--night)}
+  /* weather */
+  .wx{background:var(--paper);border:1px solid var(--line);border-radius:16px;padding:14px 14px 10px;box-shadow:var(--shadow)}
+  .wx-top{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:6px}
+  .wx-top div{flex:1 1 0;min-width:88px;background:var(--bg);border-radius:12px;padding:8px 10px}
+  .wx-top small{display:block;color:var(--sub);font-size:12px}
+  .wx-top strong{font-size:16px;white-space:nowrap}
+  .wx-advice{font-size:14px;margin:10px 2px 4px;padding:8px 12px;border-radius:10px;background:var(--leaf-soft)}
+  .wx svg{display:block;width:100%;max-width:100%;height:auto;overflow:hidden}
+  #wxChart{overflow:hidden}
+  .wx .legend{display:flex;gap:14px;font-size:12px;color:var(--sub);margin:2px 2px 6px}
+  .wx .legend i{display:inline-block;width:14px;height:3px;vertical-align:middle;margin-right:5px;border-radius:2px}
+  .wx .src{font-size:11.5px;color:var(--sub);margin-top:6px}
+  .wx text{font-family:"Noto Sans KR",sans-serif}
   /* route map */
   .mapbox{background:var(--paper);border:1px solid var(--line);border-radius:16px;overflow:hidden;box-shadow:var(--shadow)}
   #map{height:420px;width:100%;background:var(--chip)}
@@ -164,6 +184,19 @@
   </div>
   <ol class="legs" id="legs"></ol>
   <div class="mapnote">선은 순서를 보여주는 직선이에요. 실제 도로 경로는 각 장소의 '길찾기'(카카오맵)로 확인하세요. 하루 총 운전 약 3시간 30분 · 180km 안팎.</div>
+</div>
+
+<h2>🌤 11/1 포천 날씨 <span class="n" id="wxUpd">예보 불러오는 중…</span></h2>
+<div class="wx" id="wx">
+  <div class="wx-top">
+    <div><small>최저 / 최고</small><strong id="wxRange">–</strong></div>
+    <div><small>체감 (낮 최고)</small><strong id="wxFeel">–</strong></div>
+    <div><small>최대 강수확률</small><strong id="wxPop">–</strong></div>
+  </div>
+  <div class="legend"><span><i style="background:var(--leaf)"></i>기온 °C</span><span><i style="background:#7fb0e0;height:8px"></i>강수확률 %</span><span><i style="background:var(--chip);height:8px"></i>여행 시간 10–22시</span></div>
+  <div id="wxChart"></div>
+  <div class="wx-advice" id="wxAdvice" hidden></div>
+  <div class="src">출처: Open-Meteo 예보 (페이지를 열 때마다 최신 예보로 갱신) · 기상청 날씨누리에서도 한 번 더 확인해 보세요.</div>
 </div>
 
 <h2>🗓 하루 일정 <span class="n">브런치 → 숲길 → 한옥 디저트 → 호수 → 불빛 → 갈비</span></h2>
@@ -287,7 +320,7 @@
     </div>
   </div>
 
-  <div class="stop drive"><div class="drive-line"><b>17:25</b> 차로 약 15분 · 해 지는 시간 17:30 무렵, 노을 보며 이동</div></div>
+  <div class="stop drive"><div class="drive-line"><b>17:25</b> 차로 약 15분 · 🌇 일몰 17:32, 노을 보며 이동</div></div>
 
   <div class="stop night">
     <div class="card">
@@ -298,10 +331,16 @@
       <h3>✨ 허브아일랜드 — 해질녘부터 불빛동화</h3>
       <span class="tag hot">노을 → 점등</span><span class="tag">지중해 마을</span>
       <p>지중해풍 허브 마을. 노을 무렵 들어가 허브식물박물관·베네치아 마을을 둘러보고, 날이 어두워지면 불빛터널과 산타마을 조명이 켜져요. 하루의 하이라이트 사진은 여기서 💛</p>
+      <div class="glow">
+        <div class="glow-row"><span class="gt">17:32</span><span>🌇 <b>일몰</b> — 도착하자마자 노을빛 속 베네치아 마을 산책</span></div>
+        <div class="glow-row"><span class="gt">~18:00</span><span>💡 <b>점등</b> — 시민박명 끝(18:00)과 거의 같은 시각, 불빛이 하나둘 켜져요</span></div>
+        <div class="glow-row hot"><span class="gt">18:00–18:30</span><span>📸 <b>사진 골든타임</b> — 하늘이 아직 파란빛(블루아워)이라 불빛과 하늘이 같이 예쁘게 나와요. 불빛터널·산타마을은 이때!</span></div>
+        <div class="glow-row"><span class="gt">18:31~</span><span>🌃 완전히 어두워짐 — 조명이 가장 선명, 천천히 둘러보다 19시 출발</span></div>
+      </div>
       <div class="meta">
-        <div><b>운영</b> 일요일 10:00 오픈 · 마감 19:00~21:00 (시즌별 상이) · 입장은 마감 1시간 전까지 · 수요일 휴무</div>
+        <div><b>운영</b> 시즌 2 (9/19~6/13) 일요일 10:00~21:00 · 입장마감 20:00 · 수요일 휴무 (공휴일엔 운영)</div>
         <div><b>요금</b> 주말 성인 12,000원 · 주차 무료 · 재입장 불가</div>
-        <div class="warn">⚠ 일요일 마감이 19시인 시즌이면 입장마감 18시 → 17:40 도착은 OK지만 늦지 않게! 전날 홈페이지에서 11월 운영시간 확인</div>
+        <div><b>팁</b> 점등(약 18시) 후 불빛을 충분히 보고 19시쯤 저녁 먹으러 출발 · 갈비장터 라스트오더가 21:00이라 <b>20:20</b>이 마지노선</div>
       </div>
       <div class="maps">
         <a href="https://www.herbisland.co.kr/" target="_blank" rel="noopener">홈페이지</a>
@@ -327,6 +366,7 @@
       <div class="meta">
         <div><b>주소</b> 포천시 소흘읍 솔모루로58번길 4-1</div>
         <div><b>영업</b> 10:00~22:00 (L.O 21:00) · 연중무휴</div>
+        <div class="warn">⚠ 라스트오더 21:00 → 허브아일랜드에서 늦어도 <b>20:20</b>엔 출발. 다만 22시 귀가를 지키려면 19:00 출발 그대로가 좋아요</div>
       </div>
       <div class="maps">
         <a href="https://map.naver.com/p/search/갈비장터 포천" target="_blank" rel="noopener">네이버지도</a>
@@ -350,13 +390,9 @@
 <h2>✅ 출발 전 체크리스트</h2>
 <p class="progress" id="progress"></p>
 <div class="check" id="check">
-  <label><input type="checkbox" data-k="c1"><span>국립수목원 도보 입장 가능 여부 전화 확인<small>☎ 031-540-2000 · 예약 사이트 당일 취소분도 한 번 체크 (나오면 주차 예약으로 전환)</small></span></label>
-  <label><input type="checkbox" data-k="c2"><span>전날 허브아일랜드 11월 운영시간 확인<small>herbisland.co.kr</small></span></label>
-  <label><input type="checkbox" data-k="c3"><span>전날 포천 날씨 확인 · 비 오면 한옥카페·허브식물박물관 비중 늘리기</span></label>
   <label><input type="checkbox" data-k="c4"><span>따뜻한 겉옷 + 편한 운동화 (숲길 왕복 5km)<small>11월 초 포천 저녁은 서울보다 꽤 쌀쌀해요</small></span></label>
-  <label><input type="checkbox" data-k="c5"><span>보조배터리 · 기념사진용 삼각대/셀카봉<small>※ 국립수목원은 삼각대 반입 금지일 수 있음</small></span></label>
+  <label><input type="checkbox" data-k="c5"><span>보조배터리 · 기념사진용 삼각대/셀카봉</span></label>
   <label><input type="checkbox" data-k="c6"><span>주유 · 하이패스 확인</span></label>
-  <label><input type="checkbox" data-k="c7"><span>작은 3주년 선물 💝<small>3주년은 '가죽혼식' — 가죽 지갑·카드케이스·키링 같은 선물이 전통이에요</small></span></label>
 </div>
 
 <div class="letter">
@@ -464,6 +500,70 @@
   } else {
     mapEl.style.display='none';
   }
+
+  // Weather (Open-Meteo, live with snapshot fallback)
+  (function(){
+    var SNAP={updated:'2026-10-29 14:20',
+      t:[2.4,2.3,3.4,3.4,3.4,3.5,3.1,3.5,3.3,4.8,6.4,7.1,8.0,8.6,9.1,9.8,9.8,9.4,8.6,8.4,8.6,8.6,8.5,8.4],
+      a:[-1.6,-1.4,0.3,-0.1,-0.2,-0.1,-0.9,0.2,0.4,2.0,3.5,4.0,4.4,4.7,5.3,6.4,6.9,6.8,6.0,5.7,6.0,5.9,6.1,6.3],
+      p:[0,0,0,2,9,19,27,31,34,35,34,32,31,32,34,37,43,50,55,58,60,59,54,47],
+      c:[1,2,2,3,3,3,3,3,3,2,2,3,2,3,2,3,3,3,3,3,3,3,3,3]};
+    var H0=9,H1=22; // show 09..22
+    var plan={10:'🚗',11:'🥑',13:'🌳',15:'🍡',16:'💎',18:'✨',20:'🔥',21:'🏡'};
+    function icon(c,h){var night=h>=18||h<7;
+      if(c===0)return night?'🌙':'☀️'; if(c<=2)return night?'🌙':'🌤'; if(c===3)return '☁️';
+      if(c===45||c===48)return '🌫'; if(c>=51&&c<=67||c>=80&&c<=82)return '🌧'; if(c>=71&&c<=77||c===85||c===86)return '🌨'; if(c>=95)return '⛈'; return '☁️';}
+    function draw(d,live){
+      var hs=[],i; for(i=H0;i<=H1;i++)hs.push(i);
+      var T=hs.map(function(h){return d.t[h]}),P=hs.map(function(h){return d.p[h]});
+      var trip=d.t.slice(10,23), tripP=d.p.slice(10,23), tripA=d.a.slice(10,23);
+      var mn=Math.min.apply(null,trip),mx=Math.max.apply(null,trip),pm=Math.max.apply(null,tripP);
+      document.getElementById('wxRange').textContent=Math.round(mn)+'° / '+Math.round(mx)+'°';
+      document.getElementById('wxFeel').textContent=Math.round(Math.max.apply(null,tripA))+'°';
+      var pmh=10+tripP.indexOf(pm);
+      document.getElementById('wxPop').textContent=pm+'% · '+pmh+'시';
+      document.getElementById('wxUpd').textContent=(live?'실시간 예보 · ':'예보 스냅샷 · ')+d.updated+' 기준';
+      // SVG
+      var W=360,Ht=200,L=24,R=4,Tp=20,B=40,cw=(W-L-R)/hs.length;
+      var lo=Math.floor(Math.min.apply(null,T)-2),hi=Math.ceil(Math.max.apply(null,T)+2);
+      var y=function(v){return Tp+(hi-v)/(hi-lo)*(Ht-Tp-B)}, yp=function(v){return Ht-B-(v/100)*(Ht-Tp-B)};
+      var x=function(k){return L+cw*k+cw/2};
+      var g='<svg viewBox="0 0 '+W+' '+Ht+'" role="img" aria-label="11월 1일 포천 시간대별 기온과 강수확률">';
+      var s0=hs.indexOf(10),s1=hs.indexOf(22);
+      g+='<rect x="'+(L+cw*s0)+'" y="'+Tp+'" width="'+(cw*(s1-s0+1))+'" height="'+(Ht-Tp-B)+'" fill="var(--chip)" opacity=".55" rx="6"/>';
+      // grid
+      for(var v=lo;v<=hi;v+=2){g+='<line x1="'+L+'" x2="'+(W-R)+'" y1="'+y(v)+'" y2="'+y(v)+'" stroke="var(--line)" stroke-width="1"/>'+
+        '<text x="'+(L-4)+'" y="'+(y(v)+3)+'" font-size="9" text-anchor="end" fill="var(--sub)">'+v+'°</text>';}
+      // bars
+      P.forEach(function(v,k){var bw=cw*.56;g+='<rect x="'+(x(k)-bw/2)+'" y="'+yp(v)+'" width="'+bw+'" height="'+(Ht-B-yp(v))+'" fill="#7fb0e0" opacity=".75" rx="3"/>';
+        if(v>=20)g+='<text x="'+x(k)+'" y="'+(Ht-B-5)+'" font-size="8.5" font-weight="700" text-anchor="middle" fill="#fff">'+v+'</text>';});
+      // temp line
+      var pts=T.map(function(v,k){return x(k)+','+y(v)}).join(' ');
+      g+='<polyline points="'+pts+'" fill="none" stroke="var(--leaf)" stroke-width="2.5" stroke-linejoin="round" stroke-linecap="round"/>';
+      T.forEach(function(v,k){var h=hs[k];g+='<circle cx="'+x(k)+'" cy="'+y(v)+'" r="2.6" fill="var(--paper)" stroke="var(--leaf)" stroke-width="2"/>';
+        if(h%2===0)g+='<text x="'+x(k)+'" y="'+(y(v)-7)+'" font-size="10" font-weight="700" text-anchor="middle" fill="var(--leaf)">'+Math.round(v)+'°</text>';});
+      // x labels + plan
+      hs.forEach(function(h,k){g+='<text x="'+x(k)+'" y="'+(Ht-B+13)+'" font-size="9.5" text-anchor="middle" fill="var(--sub)">'+h+'</text>';
+        if(plan[h])g+='<text x="'+x(k)+'" y="'+(Ht-B+31)+'" font-size="13" text-anchor="middle" fill="var(--ink)">'+plan[h]+'</text>';});
+      g+='</svg>';
+      document.getElementById('wxChart').innerHTML=g;
+      // advice
+      var adv=[]; var eve=Math.max.apply(null,d.p.slice(17,22));
+      if(pm>=50)adv.push('☔ '+(eve>=50?'저녁(허브아일랜드·저녁식사 시간)':'오후')+' 강수확률이 '+pm+'%까지 올라가요. 접이식 우산 챙기기');
+      else if(pm>=30)adv.push('🌂 강수확률 '+pm+'% — 혹시 몰라 작은 우산 하나');
+      if(Math.min.apply(null,tripA)<=5)adv.push('🧣 체감온도가 '+Math.round(Math.min.apply(null,tripA))+'°까지 내려가요. 두꺼운 겉옷·목도리 추천');
+      var ad=document.getElementById('wxAdvice'); if(adv.length){ad.innerHTML=adv.join('<br>');ad.hidden=false;}
+    }
+    draw(SNAP,false);
+    try{
+      fetch('https://api.open-meteo.com/v1/forecast?latitude=37.87&longitude=127.17&hourly=temperature_2m,apparent_temperature,precipitation_probability,weather_code&timezone=Asia%2FSeoul&start_date=2026-11-01&end_date=2026-11-01')
+      .then(function(r){return r.json()}).then(function(j){
+        var h=j.hourly; if(!h||!h.temperature_2m||h.temperature_2m.length<24||h.temperature_2m[12]==null)return;
+        var n=new Date(),pad=function(v){return ('0'+v).slice(-2)};
+        draw({updated:(n.getMonth()+1)+'/'+n.getDate()+' '+pad(n.getHours())+':'+pad(n.getMinutes()),t:h.temperature_2m,a:h.apparent_temperature,p:h.precipitation_probability.map(function(v){return v==null?0:v}),c:h.weather_code},true);
+      }).catch(function(){});
+    }catch(e){}
+  })();
 
   // D-day
   var el=document.getElementById('dday');
