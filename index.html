@@ -10,6 +10,8 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Gowun+Batang:wght@400;700&family=Noto+Sans+KR:wght@400;500;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.min.css">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.min.js"></script>
 <style>
   :root{
     --bg:#f7f1e8; --paper:#fffaf3; --ink:#2b2420; --sub:#6f625a; --line:#e6d9c8;
@@ -99,7 +101,27 @@
   footer{margin-top:36px;font-size:12.5px;color:var(--sub)}
   footer a{color:var(--sub)}
   .toggle{position:fixed;right:14px;bottom:14px;border:1px solid var(--line);background:var(--paper);color:var(--ink);border-radius:999px;padding:8px 12px;font-size:13px;box-shadow:var(--shadow);cursor:pointer}
-  @media (max-width:420px){ .strip strong{font-size:14px} .card h3{font-size:18px} }
+  /* route map */
+  .mapbox{background:var(--paper);border:1px solid var(--line);border-radius:16px;overflow:hidden;box-shadow:var(--shadow)}
+  #map{height:420px;width:100%;background:var(--chip)}
+  .legs{list-style:none;margin:0;padding:6px 10px 10px;display:grid;gap:2px}
+  .legs li{display:flex;align-items:center;gap:10px;padding:8px 6px;border-radius:10px;cursor:pointer;font-size:14.5px}
+  .legs li:hover,.legs li.on{background:var(--chip)}
+  .legs .num{flex:none;width:26px;height:26px;border-radius:50%;display:grid;place-items:center;font-size:13px;font-weight:700;color:#fff;background:var(--leaf)}
+  .legs .num.home{background:var(--sub)}
+  .legs .num.night{background:var(--night)}
+  .legs .nm{flex:1;min-width:0}
+  .legs .nm small{display:block;color:var(--sub);font-size:12.5px}
+  .legs a{flex:none;font-size:12.5px;text-decoration:none;padding:4px 10px;border:1px solid var(--line);border-radius:8px;color:var(--ink);background:var(--bg)}
+  .pin{width:30px;height:30px;border-radius:50% 50% 50% 0;transform:rotate(-45deg);background:#b5532a;border:2px solid #fff;box-shadow:0 2px 6px rgba(0,0,0,.35);display:grid;place-items:center}
+  .pin span{transform:rotate(45deg);color:#fff;font:700 13px "Noto Sans KR",sans-serif}
+  .pin.home{background:#6f625a}.pin.night{background:#4a3f9a}
+  .leaflet-popup-content{font-family:"Noto Sans KR",sans-serif;font-size:13.5px;margin:10px 14px}
+  .leaflet-popup-content b{font-size:14.5px}
+  .mapnote{font-size:12.5px;color:var(--sub);padding:0 16px 12px}
+  @media (prefers-color-scheme: dark){ :root:not([data-theme="light"]) .leaflet-tile-pane{filter:brightness(.75) contrast(1.1) saturate(.8)} }
+  :root[data-theme="dark"] .leaflet-tile-pane{filter:brightness(.75) contrast(1.1) saturate(.8)}
+  @media (max-width:420px){ .strip strong{font-size:14px} .card h3{font-size:18px} #map{height:360px} }
 </style>
 </head>
 <body>
@@ -118,6 +140,13 @@
   <div><small>이동</small><strong>🚗 자차</strong></div>
   <div><small>귀가</small><strong>~21:50</strong></div>
 </section>
+
+<h2>🗺 우리 동선 <span class="n">핀·목록을 누르면 해당 장소로 이동</span></h2>
+<div class="mapbox">
+  <div id="map" role="img" aria-label="성남에서 출발해 포천 6곳을 돌고 돌아오는 동선 지도"></div>
+  <ol class="legs" id="legs"></ol>
+  <div class="mapnote">선은 순서를 보여주는 직선이에요. 실제 도로 경로는 각 장소의 '길찾기'(카카오맵)로 확인하세요. 하루 총 운전 약 3시간 30분 · 180km 안팎.</div>
+</div>
 
 <h2>🗓 하루 일정 <span class="n">숲 → 한옥카페 → 호수 → 불빛 → 갈비</span></h2>
 
@@ -217,18 +246,18 @@
     </div>
   </div>
 
-  <div class="stop drive"><div class="drive-line"><b>17:05</b> 차로 약 10분 · 해 지는 시간 17:30 무렵</div></div>
+  <div class="stop drive"><div class="drive-line"><b>17:05</b> 차로 약 15분 · 해 지는 시간 17:30 무렵</div></div>
 
   <div class="stop night">
     <div class="card">
-      <div class="time">17:15 – 19:00</div>
+      <div class="time">17:20 – 19:00</div>
       <h3>✨ 허브아일랜드 — 해질녘부터 불빛동화</h3>
       <span class="tag hot">노을 → 점등</span><span class="tag">지중해 마을</span>
       <p>지중해풍 허브 마을. 노을 무렵 들어가 허브식물박물관·베네치아 마을을 둘러보고, 날이 어두워지면 불빛터널과 산타마을 조명이 켜져요. 하루의 하이라이트 사진은 여기서 💛</p>
       <div class="meta">
         <div><b>운영</b> 일요일 10:00 오픈 · 마감 19:00~21:00 (시즌별 상이) · 입장은 마감 1시간 전까지 · 수요일 휴무</div>
         <div><b>요금</b> 주말 성인 12,000원 · 주차 무료 · 재입장 불가</div>
-        <div class="warn">⚠ 11월 마감 시간이 시즌마다 바뀌니 전날 홈페이지에서 확인 (17:15 입장이면 어느 쪽이든 OK)</div>
+        <div class="warn">⚠ 11월 마감 시간이 시즌마다 바뀌니 전날 홈페이지에서 확인 (17:20 입장이면 어느 쪽이든 OK)</div>
       </div>
       <div class="maps">
         <a href="https://www.herbisland.co.kr/" target="_blank" rel="noopener">홈페이지</a>
@@ -309,6 +338,66 @@
 
 <script>
 (function(){
+  // Route map
+  var stops=[
+    {n:'집',   t:'10:00 출발',        name:'성남 수정구 (적푸리로)', lat:37.4343, lng:127.0832, k:'home'},
+    {n:'1',    t:'11:00 단풍 산책',    name:'국립수목원',           lat:37.75976, lng:127.16888},
+    {n:'2',    t:'12:40 점심',         name:'광릉한옥집',           lat:37.74302, lng:127.19935},
+    {n:'3',    t:'14:05 한옥 카페',    name:'물꼬방',               lat:37.79570, lng:127.15942},
+    {n:'4',    t:'15:50 천주호',       name:'포천아트밸리',         lat:37.92314, lng:127.23714},
+    {n:'5',    t:'17:20 불빛동화',     name:'허브아일랜드',         lat:37.96539, lng:127.13167, k:'night'},
+    {n:'6',    t:'19:30 이동갈비',     name:'갈비장터',             lat:37.82710, lng:127.14535},
+    {n:'집',   t:'~21:45 도착',        name:'집으로',               lat:37.4343, lng:127.0832, k:'home', back:true}
+  ];
+  var legs=document.getElementById('legs');
+  var kakao=function(s){return 'https://map.kakao.com/link/to/'+encodeURIComponent(s.name)+','+s.lat+','+s.lng;};
+  stops.forEach(function(s,i){
+    var li=document.createElement('li'); li.dataset.i=i;
+    li.innerHTML='<span class="num '+(s.k||'')+'">'+s.n+'</span><span class="nm">'+s.name+'<small>'+s.t+'</small></span>'+
+      (s.k==='home'?'':'<a href="'+kakao(s)+'" target="_blank" rel="noopener">길찾기</a>');
+    legs.appendChild(li);
+  });
+  if(window.L){
+    var map=L.map('map',{scrollWheelZoom:false,tap:true});
+    L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png',{maxZoom:18,attribution:'&copy; OpenStreetMap'}).addTo(map);
+    var pts=stops.map(function(s){return [s.lat,s.lng]});
+    // outbound / return lines
+    L.polyline(pts.slice(0,7),{color:'#b5532a',weight:4,opacity:.85}).addTo(map);
+    L.polyline(pts.slice(6),{color:'#6f625a',weight:3,opacity:.7,dashArray:'6 8'}).addTo(map);
+    var markers=[];
+    stops.forEach(function(s,i){
+      if(s.back){markers.push(markers[0]);return;}
+      var icon=L.divIcon({className:'',html:'<div class="pin '+(s.k||'')+'"><span>'+(s.k==='home'?'⌂':s.n)+'</span></div>',iconSize:[30,30],iconAnchor:[15,30],popupAnchor:[0,-28]});
+      var m=L.marker([s.lat,s.lng],{icon:icon,zIndexOffset:s.k==='home'?0:1000}).addTo(map)
+        .bindPopup('<b>'+(s.k==='home'?'':s.n+'. ')+s.name+'</b><br>'+s.t+(s.k==='home'?'':'<br><a href="'+kakao(s)+'" target="_blank" rel="noopener">카카오맵 길찾기 →</a>'));
+      markers.push(m);
+    });
+    var poc=L.latLngBounds(pts.slice(1,7));
+    var all=L.latLngBounds(pts);
+    map.fitBounds(poc,{padding:[30,30]});
+    [].forEach.call(legs.children,function(li){
+      li.addEventListener('click',function(e){
+        if(e.target.tagName==='A') return;
+        var i=+li.dataset.i, s=stops[i];
+        [].forEach.call(legs.children,function(x){x.classList.toggle('on',x===li)});
+        if(s.k==='home'){map.flyToBounds(all,{padding:[24,24]});}
+        else{map.flyTo([s.lat,s.lng],13);}
+        markers[i].openPopup();
+        document.getElementById('map').scrollIntoView({behavior:'smooth',block:'center'});
+      });
+    });
+    // quick zoom to Pocheon area
+    var btn=L.control({position:'topright'});
+    btn.onAdd=function(){var d=L.DomUtil.create('div','leaflet-bar');d.innerHTML='<a href="#" title="포천 확대" style="width:auto;padding:0 8px;font-size:12px">포천</a><a href="#" title="전체" style="width:auto;padding:0 8px;font-size:12px">전체</a>';
+      var a=d.querySelectorAll('a');
+      L.DomEvent.on(a[0],'click',function(e){L.DomEvent.preventDefault(e);map.flyToBounds(poc,{padding:[30,30]})});
+      L.DomEvent.on(a[1],'click',function(e){L.DomEvent.preventDefault(e);map.flyToBounds(all,{padding:[24,24]})});
+      L.DomEvent.disableClickPropagation(d);return d;};
+    btn.addTo(map);
+  } else {
+    document.getElementById('map').style.display='none';
+  }
+
   // D-day
   var el=document.getElementById('dday');
   var trip=new Date('2026-11-01T10:00:00+09:00');
